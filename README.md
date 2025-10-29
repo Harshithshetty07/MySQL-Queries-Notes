@@ -1,1 +1,3 @@
 # MySQL-Queries-Notes
+
+queries
