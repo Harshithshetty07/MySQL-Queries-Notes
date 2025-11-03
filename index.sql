@@ -49,3 +49,10 @@ Note: Output column name should be fiction_count. */
 
 SELECT COUNT(*) AS fiction_count FROM Books WHERE genre = 'FICTION';
 
+/* 7. List of Movies with Ratings
+Task
+Write a query to select only the movie names where the ratings are greater than 7 but less than 9.
+
+Table: Cinema */
+
+SELECT Movie_name FROM Cinema WHERE Rating > 7 AND Rating < 9;
