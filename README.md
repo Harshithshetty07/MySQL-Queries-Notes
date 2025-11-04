@@ -39,3 +39,22 @@ answer: SELECT COUNT(\*) AS fiction_count FROM Books WHERE genre = 'FICTION';
 Table: Cinema
 
 answer: SELECT Movie_name from Cinema WHERE Rating > 7 AND Rating < 9 ;
+
+
+8. Handling NULL Values.
+
+Task
+Write a query to retrieve book_id, title, author and published_year of the books which have NULL rating for their books.
+
+Table name: Library
+
+answer: SELECT book_id, title, author, published_year FROM Library WHERE rating IS NULL --------- IS used for check the NULL values
+
+9.  Salary of Employees
+Task
+Create a query to retrieve the employee_name, company, and salary for employees in the full-time category, ordered by salary in descending order
+
+Table name: Employees 
+
+answer: SELECT employee_name, company, salary FROM Employees 
+WHERE category = 'Full-Time' ORDER BY salary DESC;
