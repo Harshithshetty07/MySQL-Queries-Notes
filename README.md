@@ -41,6 +41,7 @@ Table: Cinema
 answer: SELECT Movie_name from Cinema WHERE Rating > 7 AND Rating < 9 ;
 
 
+
 8. Handling NULL Values.
 
 Task
