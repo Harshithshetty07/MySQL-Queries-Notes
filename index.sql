@@ -87,3 +87,27 @@ Table name: Employees
 */
 
 SELECT department, COUNT(*) AS total_employees FROM Employees GROUP BY department;
+
+
+/* 
+    11 Player Performance Insights
+Task
+Write a query to find the names of the top 3 distinct players by highest score who have won matches, including their scores.
+
+Table 1: Players
+*/
+
+SELECT DISTINCT p.player_name, p.score FROM Players p JOIN Matches m
+      ON p.player_name = m.winner ORDER BY p.score DESC LIMIT 3;
+
+/* 
+    12 Player Details
+Task
+Write a query to retrieve the details of the last five matches played, including the match ID, the names of the players who participated, the name of the winning player, match date, and the final score of the winner.
+
+There are two tables named Players and Matches.
+*/
+
+SELECT m.match_id, m.player_1, m.player_2, m.winner, m.match_date, p.score
+    FROM Matches m JOIN Players p ON m.winner = p.player_name 
+    ORDER BY m.match_date DESC LIMIT 5;

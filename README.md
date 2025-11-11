@@ -40,8 +40,6 @@ Table: Cinema
 
 answer: SELECT Movie_name from Cinema WHERE Rating > 7 AND Rating < 9 ;
 
-
-
 8. Handling NULL Values.
 
 Task
@@ -52,20 +50,39 @@ Table name: Library
 answer: SELECT book_id, title, author, published_year FROM Library WHERE rating IS NULL --------- IS used for check the NULL values
 
 9.  Salary of Employees
-Task
-Create a query to retrieve the employee_name, company, and salary for employees in the full-time category, ordered by salary in descending order
+    Task
+    Create a query to retrieve the employee_name, company, and salary for employees in the full-time category, ordered by salary in descending order
 
-Table name: Employees 
+Table name: Employees
 
-answer: SELECT employee_name, company, salary FROM Employees 
+answer: SELECT employee_name, company, salary FROM Employees
 WHERE category = 'Full-Time' ORDER BY salary DESC;
 
-
-10.  Department of Each Employee
+10. Department of Each Employee
 
 Task
 Write a query to group the employees by their department and display the total number of employees (as total_employees) in each department.
 
 Table name: Employees
 
-SELECT department, COUNT(*) FROM Employees GROUP BY department;
+SELECT department, COUNT(\*) FROM Employees GROUP BY department;
+
+11. Player Performance Insights
+
+Task
+Write a query to find the names of the top 3 distinct players by highest score who have won matches, including their scores.
+
+Table 1: Players
+
+SELECT DISTINCT p.player_name, p_score FROM Players p JOIN Matches m
+ON p.player_name = m.winner ORDER BY p.score DESC LIMIT 3;
+
+12 Player Details
+Task
+Write a query to retrieve the details of the last five matches played, including the match ID, the names of the players who participated, the name of the winning player, match date, and the final score of the winner.
+
+There are two tables named Players and Matches.
+
+SELECT m.match_id, m.player_1, m.player_2, m.winner, m.match_date, p.score
+FROM Matches m JOIN Players p ON m.winner = p.player_name
+ORDER BY m.match_date DESC LIMIT 5;
